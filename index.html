@@ -9,29 +9,38 @@
     <link rel="shortcut icon" href="img/icon.ico">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h3>Player 1</h3>
-          <div class="col-md-2 col-md-push-5">
-            <h3 class="total-score" id="p1-total-score">23</h3>
+    <div class="playing">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Player 1</h3>
+            <div class="col-md-2 col-md-push-5">
+              <h3 class="total-score" id="p1-total-score">0</h3>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3>Player 2</h3>
+            <div class="col-md-2 col-md-push-5">
+              <h3 class="total-score" id="p2-total-score">0</h3>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <h3>Player 2</h3>
+        <div class="row">
           <div class="col-md-2 col-md-push-5">
-            <h3 class="total-score" id="p2-total-score">23</h3>
+            <h3 id="turn-score">0</h3>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 col-md-push-5">
-          <h3 id="turn-score">33</h3>
+        <div class="row" id="buttons">
+          <button type="button" class="btn" id="roll">Roll the Dice</button>
+          <button type="submit" class="btn" id="end">End Turn</button>
         </div>
       </div>
-      <div class="row" id="buttons">
-        <button type="button" class="btn">Roll the Dice</button>
-        <button type="submit" class="btn">End Turn</button>
+    </div>
+    <div class="won">
+      <div class="container">
+        <h1 id="username-won"></h1>
+        <h3 id= "user-points-won"></h3>
+        <img src="" alt="you won" />
       </div>
     </div>
   </body>
