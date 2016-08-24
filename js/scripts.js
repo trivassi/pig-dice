@@ -74,12 +74,12 @@ $(document).ready(function() {
     p2.turnScore = 0;
     $("#turn-score").text(0);
 
-    if (p1.totalScore >= 10) {
+    if (p1.totalScore >= 100) {
       $(".playing").hide();
       $(".won").show();
       $("#username-won").text("Player 1 Wins");
       $("#user-points-won").text(p1.totalScore);
-    } else if (p2.totalScore >= 10) {
+    } else if (p2.totalScore >= 100) {
       $(".playing").hide();
       $(".won").show();
       $("#username-won").text("Player 2 Wins");
