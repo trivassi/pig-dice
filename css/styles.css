@@ -1,0 +1,19 @@
+#turn-score {
+  text-align: center;
+  border: 2px solid black;
+}
+
+.col-md-6 {
+  text-align: center;
+
+}
+
+.total-score {
+  text-align: center;
+  border: 2px solid black;
+}
+
+#buttons {
+  text-align: center;
+  padding-top: 500px;
+}
