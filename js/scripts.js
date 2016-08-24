@@ -49,6 +49,8 @@ function diceRoll() {
 
 
 $(document).ready(function() {
+
+
   $("#roll").click(function(event) {
     event.preventDefault();
 
@@ -56,7 +58,8 @@ $(document).ready(function() {
 
   });
 
-  $("#end").click(function() {
+  $("#end").click(function(event) {
+    event.preventDefault();
 
     if ((count%2) === 0) {
       p1.totalScore += p1.turnScore;
@@ -82,6 +85,14 @@ $(document).ready(function() {
       $("#username-won").text("Player 2 Wins");
       $("#user-points-won").text(p2.totalScore);
     }
+  });
+
+  $("#play").click(function(event) {
+    event.preventDefault();
+
+    $(".input-username").hide();
+    $(".playing").show();
+
   });
 
 
