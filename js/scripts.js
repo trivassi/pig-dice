@@ -1,4 +1,8 @@
 //Back End
+var myIndexLeft = 0;
+var myIndexRight = 0;
+
+
 function Player(username, playerNumber, turnScore, totalScore) {
   this.username = username;
   this.playerNumber = playerNumber;
@@ -47,14 +51,103 @@ function diceRoll() {
   }
 }
 
+//added
+function carouselLeft() {
+    var i;
+    var x = document.getElementsByClassName("diceroll-left");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndexLeft++;
+    if (myIndexLeft > x.length) {myIndexLeft = 1}
+    x[myIndexLeft].style.display = "block";
+    setTimeout(carouselLeft, 100); // Change image every 2 seconds
+    }
+
+    function carouselRight() {
+        var i;
+        var x = document.getElementsByClassName("diceroll-right");
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        myIndexRight++;
+        if (myIndexRight > x.length) {myIndexRight = 1}
+        x[myIndexRight].style.display = "block";
+        setTimeout(carouselRight, 100); // Change image every 2 seconds
+        }
 
 $(document).ready(function() {
 
+  // $(".diceRoll").show();
 
   $("#roll").click(function(event) {
     event.preventDefault();
-
     $("#turn-score").text(diceRoll());
+    carouselLeft();
+    carouselRight();
+
+  //   var blanks = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
+  //
+  // blanks.forEach(function(blank) {
+  //   var userInput = $("input#" + blank).val();
+  //   $("." + blank).text(userInput);
+  // });
+  //
+  // $("#story").show();
+
+  // var leftpics = [1,2,3,4,5,6];
+  //
+  // leftpics.forEach(function(pic)) {
+  //
+  //   for (var dice.dice1 = 1; dice.dice1 < 7; dice.dice1++) {
+  //     var showLeft = $("#left-dice" + leftpics)
+  //     if (showLeft === dice.dice1) {
+  //       showLeft.show();
+  //     }
+  //   }
+  //
+  // }
+//
+//   var imgArray = new Array();
+// 
+//   imgArray[0] = new Image();
+//   imgArray[0].src = 'img/dice1.svg';
+//
+//   imgArray[1] = new Image();
+//   imgArray[1].src = 'img/dice2.svg';
+//
+//   imgArray[2] = new Image();
+//   imgArray[2].src = 'img/dice3.svg';
+//
+//   imgArray[3] = new Image();
+//   imgArray[3].src = 'img/dice4.svg';
+//
+//   imgArray[4] = new Image();
+//   imgArray[4].src = 'img/dice5.svg';
+//
+//   imgArray[5] = new Image();
+//   imgArray[5].src = 'img/dice6.svg';
+//
+// /*------------------------------------*/
+//
+// function nextImage(element)
+// {
+//     var img = document.getElementById(element);
+//
+//     for(var i = 0; i < imgArray.length;i++)
+//     {
+//         if(imgArray[i].src == img.src) // << check this
+//         {
+//             if(i === imgArray.length){
+//                 document.getElementById(element).src = imgArray[0].src;
+//                 break;
+//             }
+//             document.getElementById(element).src = imgArray[i+1].src;
+//             break;
+//         }
+//     }
+// }
+
 
   });
 
